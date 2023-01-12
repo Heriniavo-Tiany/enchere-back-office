@@ -1,0 +1,8 @@
+{
+  "name": "Enchere - BackOffice",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "f9095206"
+}
