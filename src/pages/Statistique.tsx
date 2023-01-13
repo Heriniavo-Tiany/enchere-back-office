@@ -3,6 +3,7 @@ import {useParams} from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
 import {Doughnut} from "../components/Doughnut";
+import {AreaChart} from "../components/AreaChart";
 
 const Page: React.FC = () => {
 
@@ -26,7 +27,9 @@ const Page: React.FC = () => {
                 </IonHeader>
 
                 <Doughnut/>
-
+                <div className="chart-container">
+                    <AreaChart />
+                </div>
 
             </IonContent>
         </IonPage>
