@@ -24,6 +24,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Inscription from "./pages/Inscription";
 import ListeDemandeRechargement from "./pages/ListeDemandeRechargement";
+import Statistique from "./pages/Statistique";
 
 setupIonicReact();
 
@@ -47,7 +48,9 @@ const App: React.FC = () => {
             <Route path="/rechargements" exact={true}>
               <ListeDemandeRechargement />
             </Route>
-
+            <Route path="/statistiques" exact={true}>
+              <Statistique />
+            </Route>
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

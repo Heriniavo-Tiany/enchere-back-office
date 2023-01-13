@@ -27,6 +27,12 @@ const appPages: AppPage[] = [
     url: '/rechargements',
     iosIcon: mailOutline,
     mdIcon: mailSharp
+  },
+  {
+    title: 'Statistiques',
+    url: '/statistiques',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
   }
 ];
 
