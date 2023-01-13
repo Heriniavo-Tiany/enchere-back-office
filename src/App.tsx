@@ -23,6 +23,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Inscription from "./pages/Inscription";
+import ListeDemandeRechargement from "./pages/ListeDemandeRechargement";
 
 setupIonicReact();
 
@@ -42,6 +43,9 @@ const App: React.FC = () => {
 
             <Route path="/inscription" exact={true}>
               <Inscription />
+            </Route>
+            <Route path="/rechargements" exact={true}>
+              <ListeDemandeRechargement />
             </Route>
 
           </IonRouterOutlet>
