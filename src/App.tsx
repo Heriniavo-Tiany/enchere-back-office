@@ -22,6 +22,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Inscription from "./pages/Inscription";
 
 setupIonicReact();
 
@@ -38,6 +39,11 @@ const App: React.FC = () => {
             <Route path="/page/:name" exact={true}>
               <Page />
             </Route>
+
+            <Route path="/inscription" exact={true}>
+              <Inscription />
+            </Route>
+
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
