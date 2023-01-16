@@ -4,9 +4,11 @@ interface ContainerProps {
     idUtilisateur: string;
     nom: string;
     valeur: number;
+    idRechargement: string;
+    dateRechargement: any
 }
 
-const DemandeRechargement: React.FC<ContainerProps> = ({idUtilisateur, nom, valeur}) => {
+const DemandeRechargement: React.FC<ContainerProps> = ({idUtilisateur, nom, valeur, idRechargement, dateRechargement}) => {
     return (
             <IonItemSliding key={idUtilisateur}>
                 <IonItem>
@@ -17,7 +19,11 @@ const DemandeRechargement: React.FC<ContainerProps> = ({idUtilisateur, nom, vale
                     </IonAvatar>
                     <IonLabel className="ion-padding">
                         <h2>{nom}</h2>
-                        <p>Valeur: {valeur} Ar</p>
+
+                        <p>id: {idRechargement}</p>
+                        <p>date: {dateRechargement}</p>
+
+                        <h3>Valeur: {valeur} Ar</h3>
                     </IonLabel>
                 </IonItem>
                 <IonItemOptions side="end">

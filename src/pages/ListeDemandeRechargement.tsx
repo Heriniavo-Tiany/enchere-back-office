@@ -1,24 +1,25 @@
 import {IonButtons, IonContent, IonHeader, IonList, IonMenuButton, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import {useEffect, useState} from 'react';
 import {useParams} from 'react-router';
 import DemandeRechargement from '../components/DemandeRechargement';
 import './Page.css';
+import axios from "axios";
 
 const Page: React.FC = () => {
 
-    const arr = [
-        {
-            name: "Finn",
-            desc: "High School Student"
-        },
-        {
-            name: "Han",
-            desc: "Mother of 3"
-        },
-        {
-            name: "Rey",
-            desc: "Crazy guy"
-        }
-    ]
+    const [data, setData] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        axios(`http://localhost:8080/demandeRechargements`)
+            .then((response) => {
+                setData(response.data);
+                setError(null);
+            })
+            .catch(setError);
+
+    }, []);
+    if (error) return <p>An error occurred</p>
 
     return (
         <IonPage>
@@ -40,11 +41,21 @@ const Page: React.FC = () => {
 
                 <IonContent className="ion-padding">
                     <IonList>
-                        {
+                        {/*{
                             arr.map(elem => (
                                     <DemandeRechargement idUtilisateur={elem.name} nom={elem.desc} valeur={3}/>
                                 )
                             )
+                        }*/}
+                        {
+                            data.map(({
+                                          idRechargement,
+                                          idUser,
+                                          dateDemande,
+                                          compte
+                                      }) => (
+                                <DemandeRechargement idRechargement={idRechargement} dateRechargement={dateDemande} idUtilisateur={idUser} nom={"nom"} valeur={compte}/>
+                            ))
                         }
                     </IonList>
                 </IonContent>
