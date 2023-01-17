@@ -24,6 +24,7 @@
     "faker": "5.5.3",
     "history": "^4.9.0",
     "ionicons": "^6.0.3",
+    "randomcolor": "^0.6.2",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
@@ -72,6 +73,7 @@
   "devDependencies": {
     "@capacitor/cli": "4.6.1",
     "@types/faker": "5.5.9",
+    "@types/randomcolor": "^0.5.7",
     "chart.js": "^4.0.0"
   },
   "description": "An Ionic project"
