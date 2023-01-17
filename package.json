@@ -21,7 +21,6 @@
     "@types/react-router-dom": "^5.1.7",
     "axios": "^1.2.2",
     "chart.js": "^4.1.2",
-    "faker": "5.5.3",
     "history": "^4.9.0",
     "ionicons": "^6.0.3",
     "randomcolor": "^0.6.2",
@@ -72,7 +71,6 @@
   },
   "devDependencies": {
     "@capacitor/cli": "4.6.1",
-    "@types/faker": "5.5.9",
     "@types/randomcolor": "^0.5.7",
     "chart.js": "^4.0.0"
   },
