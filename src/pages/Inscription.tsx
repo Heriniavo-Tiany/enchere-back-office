@@ -16,6 +16,8 @@ import './Page.css';
 import {useState} from "react";
 import {isValid} from "ionicons/dist/types/components/icon/validate";
 import {Link} from "react-router-dom";
+import axios from "axios";
+import { useHistory } from 'react-router-dom';
 
 const Inscription: React.FC = () => {
 
@@ -23,10 +25,25 @@ const Inscription: React.FC = () => {
     const [email, setEmail] = useState('')
     const [pwd, setPwd] = useState('')
     const [contact, setContact] = useState('')
+    const history = useHistory();
+    const inscription = async () => {
+        const params = {
+            nom: nom,
+            email: email,
+            motDePasse: pwd,
+            contact: contact
+        };
 
-    function inscriptionAdmin() {
-        console.log(nom, email, pwd, contact);
-    }
+        try {
+            const response = await axios.post(`http://localhost:8080/admins`, {}, { params });
+            if (response.status === 200) {
+                console.log(response.data);
+                history.push(`/login`);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
 
     /*-------Email Verif------------*/
@@ -93,7 +110,7 @@ const Inscription: React.FC = () => {
                         <IonInput type="password" clearInput={true}
                                   onIonChange={(e: any) => setPwd(e.target.value)}></IonInput>
                     </IonItem>
-                    <IonButton onClick={inscriptionAdmin}>S'inscrire</IonButton>
+                    <IonButton onClick={inscription}>S'inscrire</IonButton>
                     <p> Vous avez déja un compte? <Link  color="primary" to={`/login`}>Se connecter</Link></p>
                 </div>
 

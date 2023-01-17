@@ -33,6 +33,12 @@ const appPages: AppPage[] = [
     url: '/statistiques',
     iosIcon: mailOutline,
     mdIcon: mailSharp
+  },
+  {
+    title: 'Inscription',
+    url: '/inscription',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
   }
 ];
 
