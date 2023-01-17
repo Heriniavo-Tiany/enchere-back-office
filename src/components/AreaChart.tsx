@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -12,6 +12,8 @@ import {
 } from 'chart.js';
 import {Line} from 'react-chartjs-2';
 import faker from 'faker';
+import axios from 'axios';
+import randomcolor from "randomcolor";
 
 ChartJS.register(
     CategoryScale,
@@ -34,7 +36,7 @@ export const options = {
         },
         title: {
             display: true,
-            text: 'Chart.js Line Chart',
+            text: 'Somme des ventes',
         },
     },
 };
@@ -46,8 +48,8 @@ export const data = {
     datasets: [
         {
             fill: true,
-            label: 'Dataset 2',
-            data: labels.map(() => faker.datatype.number({min: 0, max: 1000})),
+            label: 'Ventes',
+            data: [],
             borderColor: 'rgb(53, 162, 235)',
             backgroundColor: 'rgba(53, 162, 235, 0.5)',
         },
@@ -55,6 +57,26 @@ export const data = {
 };
 
 export function AreaChart() {
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        axios.get('http://localhost:8080/stats/mois')
+            .then(response => {
+                data.datasets[0].data = response.data.map((item: { somme: any; }) => item.somme);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                console.log(error);
+                setIsLoading(false);
+            });
+    }, []);
+
+    if (isLoading) {
+        return <p>Loading...</p>;
+    }
+
+
     return (
         <>
             <h1>Somme total par mois</h1>
