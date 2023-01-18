@@ -11,7 +11,6 @@ import {
     Legend,
 } from 'chart.js';
 import {Line} from 'react-chartjs-2';
-import faker from 'faker';
 import axios from 'axios';
 import randomcolor from "randomcolor";
 
