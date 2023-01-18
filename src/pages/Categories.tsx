@@ -5,6 +5,7 @@ import './Page.css';
 import {Doughnut} from "../components/Doughnut";
 import {AreaChart} from "../components/AreaChart";
 import BtnAddCategorie from "../components/BtnAddCategorie";
+import ListCategories from "./ListCategories";
 
 const Categories: React.FC = () => {
 
@@ -26,7 +27,7 @@ const Categories: React.FC = () => {
                         <IonTitle size="large">Catégories</IonTitle>
                     </IonToolbar>
                 </IonHeader>
-
+                <ListCategories/>
                 <BtnAddCategorie/>
             </IonContent>
         </IonPage>

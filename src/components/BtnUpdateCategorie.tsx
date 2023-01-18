@@ -14,7 +14,12 @@ import {add} from "ionicons/icons";
 import {useRef, useState} from "react";
 import {OverlayEventDetail} from "@ionic/react/dist/types/components/react-component-lib/interfaces";
 
-const BtnAddCategorie: React.FC = () => {
+interface ContainerProps {
+    idCategorie: string;
+    nom: string;
+}
+
+const BtnUpdateCategorie: React.FC<ContainerProps> = ({idCategorie, nom}) => {
 
     const modal = useRef<HTMLIonModalElement>(null);
     const input = useRef<HTMLIonInputElement>(null);
@@ -30,20 +35,21 @@ const BtnAddCategorie: React.FC = () => {
     function onWillDismiss(ev: CustomEvent<OverlayEventDetail>) {
         if (ev.detail.role === 'confirm') {
             setMessage(`Hello, ${ev.detail.data}!`);
-            inserer(ev.detail.data);
+            modifier(ev.detail.data);
         }
     }
 
-    const inserer = async (m : any) => {
+    const modifier = async (m: any) => {
         const params = {
+            id: idCategorie,
             nom: m
         };
 
         try {
-            const response = await axios.post(`http://localhost:8080/NewCategorieEnchere`, {}, { params });
+            const response = await axios.post(`http://localhost:8080/updateCatEnchere`, {}, {params});
             if (response.status === 200) {
                 console.log(response.data);
-                // history.push(`/login`);
+                window.location.replace("/categories")
             }
         } catch (error) {
             console.log(error);
@@ -52,20 +58,24 @@ const BtnAddCategorie: React.FC = () => {
 
     return (
         <>
-            <IonFab slot="fixed" vertical="bottom" horizontal="end">
-                <IonFabButton id="open-modal">
-                    <IonIcon icon={add}></IonIcon>
-                </IonFabButton>
-            </IonFab>
+            {/*<IonFab slot="fixed" vertical="bottom" horizontal="end">*/}
+            {/*    <IonFabButton id={`open-modal${idCategorie`}>*/}
+            {/*        <IonIcon icon={add}></IonIcon>*/}
+            {/*    </IonFabButton>*/}
+            {/*</IonFab>*/}
+
+            <IonButton key={idCategorie} id={`open-modal${idCategorie}`} expand="block">
+                Open
+            </IonButton>
             {/*<p>{message}</p>*/}
 
-            <IonModal ref={modal} trigger="open-modal" onWillDismiss={(ev) => onWillDismiss(ev)}>
+            <IonModal ref={modal} trigger={`open-modal${idCategorie}`} onWillDismiss={(ev) => onWillDismiss(ev)}>
                 <IonHeader>
                     <IonToolbar>
                         <IonButtons slot="start">
                             <IonButton onClick={() => modal.current?.dismiss()}>Cancel</IonButton>
                         </IonButtons>
-                        <IonTitle>Ajouter un catégorie</IonTitle>
+                        <IonTitle>Modifier un catégorie</IonTitle>
                         <IonButtons slot="end">
                             <IonButton strong={true} onClick={() => confirm()}>
                                 Confirm
@@ -75,8 +85,8 @@ const BtnAddCategorie: React.FC = () => {
                 </IonHeader>
                 <IonContent className="ion-padding">
                     <IonItem>
-                        <IonLabel position="stacked">Nom de la catégorie</IonLabel>
-                        <IonInput ref={input} type="text" placeholder="Catégorie"/>
+                        <IonLabel position="stacked">Nouveau Nom de la catégorie</IonLabel>
+                        <IonInput ref={input} type="text" value={nom}/>
                     </IonItem>
                 </IonContent>
             </IonModal>
@@ -84,4 +94,4 @@ const BtnAddCategorie: React.FC = () => {
     );
 };
 
-export default BtnAddCategorie;
+export default BtnUpdateCategorie;
