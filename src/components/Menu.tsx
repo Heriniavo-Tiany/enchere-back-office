@@ -45,6 +45,12 @@ const appPages: AppPage[] = [
     url: '/categories',
     iosIcon: mailOutline,
     mdIcon: mailSharp
+  },
+  {
+    title: 'Logout',
+    url: '/logout',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp
   }
 ];
 

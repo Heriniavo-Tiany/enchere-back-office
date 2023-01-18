@@ -41,12 +41,6 @@ const Page: React.FC = () => {
 
                 <IonContent className="ion-padding">
                     <IonList>
-                        {/*{
-                            arr.map(elem => (
-                                    <DemandeRechargement idUtilisateur={elem.name} nom={elem.desc} valeur={3}/>
-                                )
-                            )
-                        }*/}
                         {
                             data.map(({
                                           idRechargement,

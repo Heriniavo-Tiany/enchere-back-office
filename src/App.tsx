@@ -26,6 +26,7 @@ import Inscription from "./pages/Inscription";
 import ListeDemandeRechargement from "./pages/ListeDemandeRechargement";
 import Statistique from "./pages/Statistique";
 import Categories from "./pages/Categories";
+import Logout from "./pages/Logout";
 
 setupIonicReact();
 
@@ -54,6 +55,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/categories" exact={true}>
               <Categories />
+            </Route>
+            <Route path="/logout" exact={true}>
+              <Logout />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
