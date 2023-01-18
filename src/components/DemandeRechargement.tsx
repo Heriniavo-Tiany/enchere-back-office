@@ -1,4 +1,5 @@
 import {IonAvatar, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel} from "@ionic/react";
+import axios from "axios";
 
 interface ContainerProps {
     idUtilisateur: string;
@@ -9,6 +10,24 @@ interface ContainerProps {
 }
 
 const DemandeRechargement: React.FC<ContainerProps> = ({idUtilisateur, nom, valeur, idRechargement, dateRechargement}) => {
+
+    const valider = async () => {
+        const params = {
+            idRechargement: idRechargement,
+            admin: 1
+        };
+
+        try {
+            const response = await axios.post(`http://localhost:8080/rechargements`, {}, { params });
+            if (response.status === 200) {
+                console.log(response.data);
+                // history.push(`/login`);
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
             <IonItemSliding key={idUtilisateur}>
                 <IonItem>
@@ -27,7 +46,7 @@ const DemandeRechargement: React.FC<ContainerProps> = ({idUtilisateur, nom, vale
                     </IonLabel>
                 </IonItem>
                 <IonItemOptions side="end">
-                    <IonItemOption onClick={() => alert("Do you really want to remove it from the list?")} >Valider</IonItemOption>
+                    <IonItemOption onClick={() => valider()} >Valider</IonItemOption>
                 </IonItemOptions>
 
                 <IonItemOptions side="start">
