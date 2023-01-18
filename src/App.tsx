@@ -25,6 +25,7 @@ import './theme/variables.css';
 import Inscription from "./pages/Inscription";
 import ListeDemandeRechargement from "./pages/ListeDemandeRechargement";
 import Statistique from "./pages/Statistique";
+import Categories from "./pages/Categories";
 
 setupIonicReact();
 
@@ -50,6 +51,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/statistiques" exact={true}>
               <Statistique />
+            </Route>
+            <Route path="/categories" exact={true}>
+              <Categories />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
