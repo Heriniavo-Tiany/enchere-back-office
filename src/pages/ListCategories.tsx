@@ -3,10 +3,10 @@ import {Redirect} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import DemandeRechargement from "../components/DemandeRechargement";
-import {IonButton} from "@ionic/react";
+import {IonButton, IonItem, IonItemSliding, IonLabel, IonList} from "@ionic/react";
 import BtnUpdateCategorie from "../components/BtnUpdateCategorie";
 
-    const deleteCat = async (idCategorie : any) => {
+const deleteCat = async (idCategorie: any) => {
     try {
         const response = await axios.delete(`http://localhost:8080/categories/${idCategorie}`, {});
         if (response.status === 200) {
@@ -36,27 +36,47 @@ const ListCategories: React.FC = () => {
 
     return (
         <>
-            <table>
-                <tr>
-                    <th>#</th>
-                    <th>Nom</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+            {/*<table>*/}
+            {/*    <tr>*/}
+            {/*        <th>#</th>*/}
+            {/*        <th>Nom</th>*/}
+            {/*        <th></th>*/}
+            {/*        <th></th>*/}
+            {/*    </tr>*/}
+            {/*    {*/}
+            {/*        data.map(({*/}
+            {/*                      idcategorie,*/}
+            {/*                      nom*/}
+            {/*                  }) => (*/}
+            {/*            <tr>*/}
+            {/*                <td>{idcategorie}</td>*/}
+            {/*                <td>{nom}</td>*/}
+            {/*                <td><IonButton onClick={() => deleteCat(idcategorie)} >Delete</IonButton></td>*/}
+            {/*                <td><BtnUpdateCategorie idCategorie={idcategorie} nom={nom}/></td>*/}
+            {/*            </tr>*/}
+            {/*        ))*/}
+            {/*    }*/}
+            {/*</table>*/}
+            <IonList>
                 {
                     data.map(({
                                   idcategorie,
                                   nom
                               }) => (
-                        <tr>
-                            <td>{idcategorie}</td>
-                            <td>{nom}</td>
-                            {/*<td><IonButton onClick={() => deleteCat(idcategorie)} >Delete</IonButton></td>*/}
-                            <td><BtnUpdateCategorie idCategorie={idcategorie} nom={nom}/></td>
-                        </tr>
+                        <IonItemSliding>
+                            <IonItem>
+                                <IonLabel className="ion-padding">
+                                    <h2>{nom}</h2>
+
+                                    <p>id: {idcategorie}</p>
+
+                                    <BtnUpdateCategorie idCategorie={idcategorie} nom={nom}/>
+                                </IonLabel>
+                            </IonItem>
+                        </IonItemSliding>
                     ))
                 }
-            </table>
+            </IonList>
         </>
     );
 };

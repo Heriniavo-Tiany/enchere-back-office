@@ -65,7 +65,7 @@ const BtnUpdateCategorie: React.FC<ContainerProps> = ({idCategorie, nom}) => {
             {/*</IonFab>*/}
 
             <IonButton key={idCategorie} id={`open-modal${idCategorie}`} expand="block">
-                Open
+                Modifier
             </IonButton>
             {/*<p>{message}</p>*/}
 
