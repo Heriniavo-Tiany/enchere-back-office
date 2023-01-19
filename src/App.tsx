@@ -27,6 +27,7 @@ import ListeDemandeRechargement from "./pages/ListeDemandeRechargement";
 import Statistique from "./pages/Statistique";
 import Categories from "./pages/Categories";
 import Logout from "./pages/Logout";
+import ListeEncheres from "./pages/ListeEncheres";
 
 setupIonicReact();
 
@@ -58,6 +59,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/logout" exact={true}>
               <Logout />
+            </Route>
+            <Route path="/encheres" exact={true}>
+              <ListeEncheres />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>

@@ -13,7 +13,7 @@ import {
 import { useLocation } from 'react-router-dom';
 import {
   archiveOutline,
-  archiveSharp,
+  archiveSharp, bagHandleOutline, bagHandleSharp,
   barChartOutline, barChartSharp,
   bookmarkOutline, cashOutline, cashSharp, enterOutline, enterSharp, exitOutline, exitSharp, gridOutline, gridSharp,
   heartOutline,
@@ -37,6 +37,12 @@ interface AppPage {
 }
 
 const appPages: AppPage[] = [
+  {
+    title: 'Enchères',
+    url: '/encheres',
+    iosIcon: bagHandleOutline,
+    mdIcon: bagHandleSharp
+  },
   {
     title: 'Demandes de Rechargements',
     url: '/rechargements',
