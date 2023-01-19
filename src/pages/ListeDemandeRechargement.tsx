@@ -1,4 +1,14 @@
-import {IonButtons, IonContent, IonHeader, IonList, IonMenuButton, IonPage, IonTitle, IonToolbar} from '@ionic/react';
+import {
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonLabel,
+    IonList,
+    IonMenuButton,
+    IonPage,
+    IonTitle,
+    IonToolbar
+} from '@ionic/react';
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router';
 import DemandeRechargement from '../components/DemandeRechargement';
@@ -40,6 +50,7 @@ const Page: React.FC = () => {
                 </IonHeader>
 
                 <IonContent className="ion-padding">
+                    <IonLabel>Glisser vers la gauche pour Valider et vers la Droite pour Refuser </IonLabel>
                     <IonList>
                         {
                             data.map(({

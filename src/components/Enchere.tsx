@@ -39,9 +39,9 @@ const Enchere: React.FC<ContainerProps> = ({
         <IonItemSliding key={idenchere}>
             <IonItem>
                 <IonAvatar>
-                    {/*<img
-                        src={`https://ionicframework.com/docs/demos/api/list/avatar-${idUtilisateur.toLocaleLowerCase()}.png`}
-                        alt=""/>*/}
+                    <img
+                        src={produit.image[0]}
+                        alt=""/>
                 </IonAvatar>
                 <IonLabel className="ion-padding">
                     <h2>{produit.description}</h2>
