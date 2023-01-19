@@ -11,7 +11,22 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import {
+  archiveOutline,
+  archiveSharp,
+  barChartOutline, barChartSharp,
+  bookmarkOutline, cashOutline, cashSharp, enterOutline, enterSharp, exitOutline, exitSharp, gridOutline, gridSharp,
+  heartOutline,
+  heartSharp,
+  mailOutline,
+  mailSharp,
+  paperPlaneOutline,
+  paperPlaneSharp,
+  trashOutline,
+  trashSharp,
+  warningOutline,
+  warningSharp
+} from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -25,32 +40,32 @@ const appPages: AppPage[] = [
   {
     title: 'Demandes de Rechargements',
     url: '/rechargements',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: cashOutline,
+    mdIcon: cashSharp
   },
   {
     title: 'Statistiques',
     url: '/statistiques',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: barChartOutline,
+    mdIcon: barChartSharp
   },
   {
     title: 'Inscription',
     url: '/inscription',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: enterOutline,
+    mdIcon: enterSharp
   },
   {
     title: 'Catégories',
     url: '/categories',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: gridOutline,
+    mdIcon: gridSharp
   },
   {
     title: 'Logout',
     url: '/logout',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: exitOutline,
+    mdIcon: exitSharp
   }
 ];
 
