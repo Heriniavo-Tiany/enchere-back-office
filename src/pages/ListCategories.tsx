@@ -4,6 +4,8 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {IonButton, IonItem, IonItemSliding, IonLabel, IonList} from "@ionic/react";
 import BtnUpdateCategorie from "../components/BtnUpdateCategorie";
+import Menu from '../components/Mn';
+
 
 const deleteCat = async (idCategorie: any) => {
     try {
@@ -56,6 +58,7 @@ const ListCategories: React.FC = () => {
             {/*        ))*/}
             {/*    }*/}
             {/*</table>*/}
+            <Mn />
             <IonList>
                 {
                     data.map(({

@@ -2,6 +2,8 @@ import {IonButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, Io
 import { useParams } from 'react-router';
 import './Page.css';
 import {usePhotoGallery} from "../components/Photo";
+import Menu from '../components/Mn';
+
 
 const Page: React.FC = () => {
 
@@ -9,6 +11,8 @@ const Page: React.FC = () => {
     const {photos, takePhoto} = usePhotoGallery();
 
   return (
+    <>
+    <Mn />
     <IonPage>
       <IonHeader>
         <IonToolbar>
@@ -31,6 +35,7 @@ const Page: React.FC = () => {
 
       </IonContent>
     </IonPage>
+    </>
   );
 };
 
