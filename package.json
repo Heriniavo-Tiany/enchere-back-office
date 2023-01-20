@@ -75,7 +75,6 @@
   },
   "devDependencies": {
     "@capacitor/cli": "4.6.1",
-    "@ionic/cli": "^6.20.8",
     "@types/randomcolor": "^0.5.7",
     "chart.js": "^4.0.0"
   },
