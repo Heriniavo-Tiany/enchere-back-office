@@ -34,7 +34,7 @@ const Login: React.FC = () => {
 
         try {
             console.log(email);
-            const response = await axios.post(`http://localhost:8080/Admin`, {}, { params });
+            const response = await axios.post(`https://wsenchere.up.railway.app/Admin`, {}, { params });
             if (response.status === 200) {
                     console.log(response.data);
                     const data = response.data;

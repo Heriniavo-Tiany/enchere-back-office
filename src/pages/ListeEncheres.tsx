@@ -1,11 +1,8 @@
 import {IonButtons, IonContent, IonHeader, IonList, IonMenuButton, IonPage, IonTitle, IonToolbar} from '@ionic/react';
 import {useEffect, useState} from 'react';
-import {useParams} from 'react-router';
-import DemandeRechargement from '../components/DemandeRechargement';
 import './Page.css';
 import axios from "axios";
 import Enchere from "../components/Enchere";
-import Menu from '../components/Mn';
 
 const Page: React.FC = () => {
 
@@ -25,7 +22,6 @@ const Page: React.FC = () => {
 
     return (
         <>
-        <Mn />
         <IonPage>
             <IonHeader>
                 <IonToolbar>

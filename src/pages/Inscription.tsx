@@ -10,11 +10,8 @@ import {
     IonTitle,
     IonToolbar
 } from '@ionic/react';
-import {useParams} from 'react-router';
-import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
 import {useState} from "react";
-import {isValid} from "ionicons/dist/types/components/icon/validate";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
@@ -73,7 +70,7 @@ const Inscription: React.FC = () => {
     /*-------/Email Verif------------*/
 
     return (
-        <><Mn />
+        <>
 
         <IonPage>
             <IonHeader>
