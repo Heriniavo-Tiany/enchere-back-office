@@ -29,14 +29,14 @@ const Page: React.FC = () => {
                     <IonButtons slot="start">
                         <IonMenuButton/>
                     </IonButtons>
-                    <IonTitle>Toutes les demandes de rechargements</IonTitle>
+                    <IonTitle>Enchères</IonTitle>
                 </IonToolbar>
             </IonHeader>
 
             <IonContent fullscreen>
                 <IonHeader collapse="condense">
                     <IonToolbar>
-                        <IonTitle size="large">Toutes les demandes de rechargements</IonTitle>
+                        <IonTitle size="large">Enchères</IonTitle>
                     </IonToolbar>
                 </IonHeader>
 

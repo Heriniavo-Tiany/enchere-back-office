@@ -46,7 +46,7 @@ const Enchere: React.FC<ContainerProps> = ({
                 <IonLabel className="ion-padding">
                     <h2>{produit.description}</h2>
                     <p>Début: {dateheure}</p>
-                    <p>Durée: {duree}</p>
+                    <p>Durée: {duree} mn</p>
                     <p>Prix Minimal: {prix_minimal}</p>
                     <IonButton onClick={() => btnOnClick(idproduit)}>Plus de détails</IonButton>
                 </IonLabel>
