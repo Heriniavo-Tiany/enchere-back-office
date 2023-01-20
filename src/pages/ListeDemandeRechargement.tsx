@@ -14,8 +14,6 @@ import {useParams} from 'react-router';
 import DemandeRechargement from '../components/DemandeRechargement';
 import './Page.css';
 import axios from "axios";
-import Menu from '../components/Mn';
-
 
 const Page: React.FC = () => {
 
@@ -34,8 +32,6 @@ const Page: React.FC = () => {
     if (error) return <p>An error occurred</p>
 
     return (
-        <>
-        <Mn />
         <IonPage>
             <IonHeader>
                 <IonToolbar>
@@ -70,7 +66,6 @@ const Page: React.FC = () => {
                 </IonContent>
             </IonContent>
         </IonPage>
-        </>
     );
 };
 

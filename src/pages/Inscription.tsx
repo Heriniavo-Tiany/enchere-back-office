@@ -19,7 +19,6 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
 
-
 const Inscription: React.FC = () => {
 
     const [nom, setNom] = useState('')
@@ -73,8 +72,6 @@ const Inscription: React.FC = () => {
     /*-------/Email Verif------------*/
 
     return (
-        <><Mn />
-
         <IonPage>
             <IonHeader>
                 <IonToolbar>
@@ -120,7 +117,6 @@ const Inscription: React.FC = () => {
 
             </IonContent>
         </IonPage>
-        </>
     );
 };
 

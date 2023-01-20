@@ -27,7 +27,6 @@ import ListeDemandeRechargement from "./pages/ListeDemandeRechargement";
 import Statistique from "./pages/Statistique";
 import Categories from "./pages/Categories";
 import Logout from "./pages/Logout";
-import Login from "./pages/Login";
 import ListeEncheres from "./pages/ListeEncheres";
 
 setupIonicReact();
@@ -40,7 +39,7 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/login" />
+              <Redirect to="/encheres" />
             </Route>
             <Route path="/page/:name" exact={true}>
               <Page />
@@ -63,9 +62,6 @@ const App: React.FC = () => {
             </Route>
             <Route path="/encheres" exact={true}>
               <ListeEncheres />
-            </Route>
-            <Route path="/login" exact={true}>
-              <Login />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
