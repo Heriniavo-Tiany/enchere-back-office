@@ -60,7 +60,7 @@ export function AreaChart() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/stats/mois')
+        axios.get('https://wsenchere.up.railway.app/stats/mois')
             .then(response => {
                 data.datasets[0].data = response.data.map((item: { somme: any; }) => item.somme);
                 setIsLoading(false);

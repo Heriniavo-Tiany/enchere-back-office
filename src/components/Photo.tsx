@@ -111,7 +111,7 @@ export interface UserPhoto {
 
 
 export function test(base64image: string, id: number) {
-    fetch(`http://localhost:8080/MadaSky/avions/` + id + `/update/` + sessionStorage.getItem("TokenUtilisateur"), {
+    fetch(`https://wsenchere.up.railway.app/MadaSky/avions/` + id + `/update/` + sessionStorage.getItem("TokenUtilisateur"), {
             method: 'PUT',
             body: base64image
         }

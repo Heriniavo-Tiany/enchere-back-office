@@ -24,7 +24,7 @@ export function Doughnut() {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/stats/categories')
+        axios.get('https://wsenchere.up.railway.app/stats/categories')
             .then(response => {
                 data.labels = response.data.map((item: { nom: any; }) => item.nom);
                 data.datasets[0].data = response.data.map((item: { nb: any; }) => item.nb);

@@ -46,7 +46,7 @@ const BtnUpdateCategorie: React.FC<ContainerProps> = ({idCategorie, nom}) => {
         };
 
         try {
-            const response = await axios.post(`http://localhost:8080/updateCatEnchere`, {}, {params});
+            const response = await axios.post(`https://wsenchere.up.railway.app/updateCatEnchere`, {}, {params});
             if (response.status === 200) {
                 console.log(response.data);
                 window.location.replace("/categories")

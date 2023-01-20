@@ -18,7 +18,7 @@ const DemandeRechargement: React.FC<ContainerProps> = ({idUtilisateur, nom, vale
         };
 
         try {
-            const response = await axios.post(`http://localhost:8080/rechargements`, {}, { params });
+            const response = await axios.post(`https://wsenchere.up.railway.app/rechargements`, {}, { params });
             if (response.status === 200) {
                 console.log(response.data);
                 // history.push(`/login`);

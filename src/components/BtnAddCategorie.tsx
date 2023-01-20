@@ -40,7 +40,7 @@ const BtnAddCategorie: React.FC = () => {
         };
 
         try {
-            const response = await axios.post(`http://localhost:8080/NewCategorieEnchere`, {}, { params });
+            const response = await axios.post(`https://wsenchere.up.railway.app/NewCategorieEnchere`, {}, { params });
             if (response.status === 200) {
                 console.log(response.data);
                 // history.push(`/login`);

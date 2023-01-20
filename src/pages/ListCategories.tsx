@@ -2,13 +2,12 @@ import './Page.css';
 import {Redirect} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import DemandeRechargement from "../components/DemandeRechargement";
 import {IonButton, IonItem, IonItemSliding, IonLabel, IonList} from "@ionic/react";
 import BtnUpdateCategorie from "../components/BtnUpdateCategorie";
 
 const deleteCat = async (idCategorie: any) => {
     try {
-        const response = await axios.delete(`http://localhost:8080/categories/${idCategorie}`, {});
+        const response = await axios.delete(`https://wsenchere.up.railway.app/categories/${idCategorie}`, {});
         if (response.status === 200) {
             console.log(response.data);
             // history.push(`/login`);
@@ -24,7 +23,7 @@ const ListCategories: React.FC = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios(`http://localhost:8080/CategoriesEnchere`)
+        axios(`https://wsenchere.up.railway.app/CategoriesEnchere`)
             .then((response) => {
                 setData(response.data);
                 setError(null);

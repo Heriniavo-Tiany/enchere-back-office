@@ -12,7 +12,7 @@ const Page: React.FC = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios(`http://localhost:8080/Encheres`)
+        axios(`https://wsenchere.up.railway.app/Encheres`)
             .then((response) => {
                 setData(response.data);
                 setError(null);
