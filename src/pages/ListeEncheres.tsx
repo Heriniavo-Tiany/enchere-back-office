@@ -5,6 +5,7 @@ import DemandeRechargement from '../components/DemandeRechargement';
 import './Page.css';
 import axios from "axios";
 import Enchere from "../components/Enchere";
+import Menu from '../components/Mn';
 
 const Page: React.FC = () => {
 
@@ -23,13 +24,15 @@ const Page: React.FC = () => {
     if (error) return <p>An error occurred</p>
 
     return (
+        <>
+        <Mn />
         <IonPage>
             <IonHeader>
                 <IonToolbar>
                     <IonButtons slot="start">
                         <IonMenuButton/>
                     </IonButtons>
-                    <IonTitle>Enchères</IonTitle>
+                    <IonTitle>Toutes les encheres</IonTitle>
                 </IonToolbar>
             </IonHeader>
 
@@ -73,6 +76,7 @@ const Page: React.FC = () => {
                 </IonContent>
             </IonContent>
         </IonPage>
+        </>
     );
 };
 

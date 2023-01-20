@@ -55,6 +55,12 @@ const appPages: AppPage[] = [
     iosIcon: barChartOutline,
     mdIcon: barChartSharp
   },
+   {
+    title: 'Log in',
+    url: '/login',
+    iosIcon: enterOutline,
+    mdIcon: enterSharp
+  },
   {
     title: 'Inscription',
     url: '/inscription',

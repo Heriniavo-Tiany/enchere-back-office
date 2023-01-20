@@ -6,18 +6,22 @@ import {Doughnut} from "../components/Doughnut";
 import {AreaChart} from "../components/AreaChart";
 import BtnAddCategorie from "../components/BtnAddCategorie";
 import ListCategories from "./ListCategories";
+import Menu from '../components/Mn';
 
 const Categories: React.FC = () => {
 
 
     return (
+        <>
+        <Mn />
+        
         <IonPage>
             <IonHeader>
                 <IonToolbar>
                     <IonButtons slot="start">
                         <IonMenuButton/>
                     </IonButtons>
-                    <IonTitle>Statistiques</IonTitle>
+                    <IonTitle>Catégories</IonTitle>
                 </IonToolbar>
             </IonHeader>
 
@@ -31,6 +35,7 @@ const Categories: React.FC = () => {
                 <BtnAddCategorie/>
             </IonContent>
         </IonPage>
+        </>
     );
 };
 
